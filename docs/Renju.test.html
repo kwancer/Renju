@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>test - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="Renju.html">Renju</a><ul class='methods'><li data-type='method'><a href="Renju.html#.attemptPass">attemptPass</a></li><li data-type='method'><a href="Renju.html#.attemptPly">attemptPly</a></li><li data-type='method'><a href="Renju.html#.attemptRemove">attemptRemove</a></li><li data-type='method'><a href="Renju.html#.checkDraw">checkDraw</a></li><li data-type='method'><a href="Renju.html#.checkWin">checkWin</a></li><li data-type='method'><a href="Renju.html#.colourToMove">colourToMove</a></li><li data-type='method'><a href="Renju.html#.formattedMoves">formattedMoves</a></li><li data-type='method'><a href="Renju.html#.initiateGame">initiateGame</a></li><li data-type='method'><a href="Renju.html#.isMoveValid">isMoveValid</a></li><li data-type='method'><a href="Renju.html#.movesMade">movesMade</a></li><li data-type='method'><a href="Renju.html#.nextMoveNumber">nextMoveNumber</a></li></ul></li><li><a href="Renju.test.html">test</a><ul class='methods'><li data-type='method'><a href="Renju.test.html#.checkMoves">checkMoves</a></li><li data-type='method'><a href="Renju.test.html#.displayBoard">displayBoard</a></li><li data-type='method'><a href="Renju.test.html#.generateMoves">generateMoves</a></li><li data-type='method'><a href="Renju.test.html#.simulateOpening">simulateOpening</a></li><li data-type='method'><a href="Renju.test.html#.throwIfInvalid">throwIfInvalid</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">test</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+            <span class="ancestors"><a href="Renju.html">Renju</a>.</span>
+        
+        test
+        </h2>
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="tests_renju.test.js.html">tests/renju.test.js</a>, <a href="tests_renju.test.js.html#line4">line 4</a>
+    </li></ul></dd>
+    
+
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>1.0</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Krzysztof Wancerski</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+            
+                <div class="description usertext"><p>renju.test.js is a test suite for the Renju game.</p></div>
+            
+
+            
+        
+        </div>
+    
+
+    
+
+    
+
+    
+    
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".checkMoves"><span class="type-signature">(static) </span>checkMoves<span class="signature">(playerColour, rows, cols, valid, gameState)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="tests_renju.test.js.html">tests/renju.test.js</a>, <a href="tests_renju.test.js.html#line172">line 172</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Checks if the player can move in the given rows and columns
+and compares it to the valid parameter.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>playerColour</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Renju.html#.playerColour">Renju.playerColour</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The colour of the player
+to check.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>rows</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;number></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The rows to check.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cols</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;number></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The columns to check.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>valid</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>If the player should be able to move.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>gameState</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Renju.html#.gameState">Renju.gameState</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The gameState to check.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+    <div class="param-desc usertext">
+    
+        <p>If the player cannot move but should be able to or vice versa.</p>
+    
+    </div>
+
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".displayBoard"><span class="type-signature">(static) </span>displayBoard<span class="signature">(board)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="tests_renju.test.js.html">tests/renju.test.js</a>, <a href="tests_renju.test.js.html#line18">line 18</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Returns a string representation of the board.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>board</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Array.&lt;<a href="Renju.html#.playerColour">Renju.playerColour</a>>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The board to display.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The string representation of the board.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".generateMoves"><span class="type-signature">(static) </span>generateMoves<span class="signature">(numberOfMoves, diagonalOpening, gameState)</span><span class="type-signature"> &rarr; {<a href="Renju.html#.gameState">Renju.gameState</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="tests_renju.test.js.html">tests/renju.test.js</a>, <a href="tests_renju.test.js.html#line206">line 206</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Generates a random game state with the given number of moves.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>numberOfMoves</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The number of moves to generate.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>diagonalOpening</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>If the opening should be diagonal.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>gameState</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Renju.html#.gameState">Renju.gameState</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The gameState to start from.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The generated game state.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Renju.html#.gameState">Renju.gameState</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".simulateOpening"><span class="type-signature">(static) </span>simulateOpening<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="Renju.html#.gameState">Renju.gameState</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="tests_renju.test.js.html">tests/renju.test.js</a>, <a href="tests_renju.test.js.html#line244">line 244</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Generates an opening game state.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The generated game state.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Renju.html#.gameState">Renju.gameState</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".throwIfInvalid"><span class="type-signature">(static) </span>throwIfInvalid<span class="signature">(gameState)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="tests_renju.test.js.html">tests/renju.test.js</a>, <a href="tests_renju.test.js.html#line37">line 37</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Returns if the board is in a valid state.
+A board is valid if all the following are true:</p>
+<ul>
+<li>The board is a 2d array.</li>
+<li>The board is a rectangular 2d array containing only
+null, &quot;black&quot;, &quot;white&quot; or &quot;removed&quot;.</li>
+<li>At most one player has a winning configuration.</li>
+<li>The moves are in order.</li>
+<li>The center of the board has a black token if there are any moves.</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>gameState</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">gameState</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The gameState to test.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+    <div class="param-desc usertext">
+    
+        <p>If the board fails any of the above conditions.</p>
+    
+    </div>
+
+
+    
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.2</a> on Fri Jun 23 2023 15:23:42 GMT+0100 (British Summer Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

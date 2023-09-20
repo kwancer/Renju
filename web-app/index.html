@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en-gb">
+<meta charset="utf-8">
+<title>Renju Online</title>
+<link rel="stylesheet" href="default.css">
+<script type="module" src="main.js"></script> 
+
+<header>
+    <ul>
+        <li><a href="index.html"><h1>Renju</h1></a></li>
+        <hr>
+        <li><a href="https://www.renju.net/rifrules/"><h3>The International Rules of Renju</h3></a></li>
+        <hr>
+        <li><a href="about.html"><h3>About</h3></a></li>
+        <hr>
+        <li><a href="../docs/renju.html"><h3>API Documentation</h3></a></li>
+    </ul>
+</header>
+
+<main>
+    <div class="game_info_container">
+        <div id="text">
+            <br>
+            <div id="game_info">
+                <h2>Welcome to Renju!</h2>
+                <h3>Game Rules</h3>
+                <p>Renju is played with the following rules:</p>
+                <p>The goal is to get five stones in a row, while preventing your opponent from doing the same.</p>
+                <p>In this version of the game you may use the mouse or the arrow keys and enter to place stones.</p>
+                <p>You may choose your game settings below. Classic is a standard 15x15 board.</p>
+                <p>Please also ensure you are familiar with <a href="https://www.renju.net/rifrules">the rules of the game.</a></p>
+            </div>
+            <br>
+            <div id ="game_setup">
+                <h3>Game Setup</h3>
+                <label for="player1">Player 1 (Black) Name: <br></label>
+                <input type="text" id="player1" name="player1" value="Player 1">
+                <br>
+                <br>
+                <label for="player2">Player 2 (White) Name: <br></label>
+                <input type="text" id="player2" name="player2" value="Player 2">
+                <br>
+                <br>
+                <label for="timer">Clock: <br></label>
+                <select id="timer">
+                    <option value="off">Off</option>
+                    <option value="1">1 minute</option>
+                    <option value="5">5 minutes</option>
+                    <option value="10">10 minutes</option>
+                    <option value="15">15 minutes</option>
+                </select>
+                <br>
+                <br>
+                <label for ="game_type">Game Mode: <br></label>
+                <select id="game_type">
+                    <option value="15">Classic</option>
+                    <option value="9">Quick</option>
+                    <option value="19">Expert</option>
+                </select>
+                <br>
+            </div>
+            <br>
+            <div id="start_button">
+                <button id="start_game">Start Game</button>
+            </div>
+        </div>
+    </div>
+    <div id="popup">
+        <div id="popup-content">
+            <h2>Question to Tentative White</h2>
+            <p>You are now able to choose whether to stay with your colour.</p>
+            <p>Would you like to switch the colour of the players?</p>
+            <button id="yes">Yes</button>
+            <button id="no">No</button>
+        </div>
+    </div>
+    <div id="message_popup">
+            <h2>Rule Reminder</h2>
+            <p id="message"></p>
+    </div>
+    <div class="game_board_container">
+        <table id="game_board">
+        </table>
+    </div>
+    <div id="end_game_container">
+        <div id="end_game_content">
+            <h2>Game Over</h2>
+            <p id="end_game_message"></p>
+            <h2>Game History</h2>
+            <p id="end_game_overview"></p>
+            <button id="play_again">Play Again</button>
+        </div>
+    </div>
+</main>
+
+<aside id="left">
+    <div id="text-aside">
+        <h2>Black</h2>
+        <hr>
+        <h3>Played By: <span id="black_display"></span></h3>
+        <h3>Turn: <span id="turn_display_black"></span></h3>
+        <hr>
+        </div>
+        <div id="winning_buttons_black">
+            <hr>
+            <h3>I would like to:</h3>
+            <button id="pass_black">Pass</button>
+            <button id="win_black">Claim a Win</button>
+            <hr>
+        </div>
+        <div id="clock_container_left">
+            <h3>Clock:</h3>
+            <!-- Add timer here counting down from the timer setting to 0-->
+            <h2 id="clock_black"></h2>
+        </div>
+    </div>
+</aside>
+
+<aside id="right">
+    <div id="text-aside">
+        <h2>White</h2>
+        <hr>
+        <h3>Played By: <span id="white_display"></span></h3>
+        <h3>Turn: <span id="turn_display_white"></span></h3>
+        <hr>
+        </div>
+        <div id="winning_buttons_white">
+            <hr>
+            <h3>I would like to:</h3>
+            <button id="pass_white">Pass</button>
+            <button id="win_white">Claim a Win</button>
+            <hr>
+        </div>
+        <div id="clock_container_right">
+            <h3>Clock:</h3>
+            <h2 id="clock_white"></h3>
+            <!-- Add clock here -->
+        </div>
+    </div>
+</aside>

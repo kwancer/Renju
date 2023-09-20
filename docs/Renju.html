@@ -1,0 +1,3115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>Renju - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="Renju.html">Renju</a><ul class='methods'><li data-type='method'><a href="Renju.html#.attemptPass">attemptPass</a></li><li data-type='method'><a href="Renju.html#.attemptPly">attemptPly</a></li><li data-type='method'><a href="Renju.html#.attemptRemove">attemptRemove</a></li><li data-type='method'><a href="Renju.html#.checkDraw">checkDraw</a></li><li data-type='method'><a href="Renju.html#.checkWin">checkWin</a></li><li data-type='method'><a href="Renju.html#.colourToMove">colourToMove</a></li><li data-type='method'><a href="Renju.html#.formattedMoves">formattedMoves</a></li><li data-type='method'><a href="Renju.html#.initiateGame">initiateGame</a></li><li data-type='method'><a href="Renju.html#.isMoveValid">isMoveValid</a></li><li data-type='method'><a href="Renju.html#.movesMade">movesMade</a></li><li data-type='method'><a href="Renju.html#.nextMoveNumber">nextMoveNumber</a></li></ul></li><li><a href="Renju.test.html">test</a><ul class='methods'><li data-type='method'><a href="Renju.test.html#.checkMoves">checkMoves</a></li><li data-type='method'><a href="Renju.test.html#.displayBoard">displayBoard</a></li><li data-type='method'><a href="Renju.test.html#.generateMoves">generateMoves</a></li><li data-type='method'><a href="Renju.test.html#.simulateOpening">simulateOpening</a></li><li data-type='method'><a href="Renju.test.html#.throwIfInvalid">throwIfInvalid</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Renju</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+        Renju
+        </h2>
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="renju.js.html">renju.js</a>, <a href="renju.js.html#line5">line 5</a>
+    </li></ul></dd>
+    
+
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>1.0</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Krzysztof Wancerski</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+            
+                <div class="description usertext"><p>renju.js is a module to model and play &quot;Renju&quot;. See the rules at
+https://www.renju.net/rifrules/ .</p></div>
+            
+
+            
+        
+        </div>
+    
+
+    
+
+    
+
+    
+    
+    
+
+     
+
+    
+        <h3 class="subsection-title">Namespaces</h3>
+
+        <dl>
+            <dt><a href="Renju.test.html">test</a></dt>
+            <dd></dd>
+        </dl>
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".attemptPass"><span class="type-signature">(static) </span>attemptPass<span class="signature">(playerColour, gameState)</span><span class="type-signature"> &rarr; {<a href="Renju.html#.attemptedMove">Renju.attemptedMove</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="renju.js.html">renju.js</a>, <a href="renju.js.html#line368">line 368</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Attempts to pass a turn according to the rules of Renju.
+If the pass is valid, it is made and the outcome is returned.
+If the pass is invalid, the outcome is returned.
+The pass is only allowed if at least three moves have been made.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>playerColour</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Renju.html#.playerColour">Renju.playerColour</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The colour of the player who wishes
+to pass.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>gameState</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Renju.html#.gameState">Renju.gameState</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The game state to pass the turn in.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The outcome of the attempt.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Renju.html#.attemptedMove">Renju.attemptedMove</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".attemptPly"><span class="type-signature">(static) </span>attemptPly<span class="signature">(playerColour, row, column, gameState)</span><span class="type-signature"> &rarr; {<a href="Renju.html#.attemptedMove">Renju.attemptedMove</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="renju.js.html">renju.js</a>, <a href="renju.js.html#line254">line 254</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Attempts to make a move according to the rules of Renju.
+If the move is valid, it is made and the outcome is returned.
+If the move is invalid, the outcome is returned.
+This function checks the validity of the move using the
+<a href="Renju.html#.isMoveValid"><code>Renju.isMoveValid</code></a> function.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>playerColour</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Renju.html#.playerColour">Renju.playerColour</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The colour of the player
+who wishes to ply.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>row</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The row of the move.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>column</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The column of the move.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>gameState</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Renju.html#.gameState">Renju.gameState</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The game state to apply the ply.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The outcome of the attempt.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Renju.html#.attemptedMove">Renju.attemptedMove</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".attemptRemove"><span class="type-signature">(static) </span>attemptRemove<span class="signature">(row, column, gameState)</span><span class="type-signature"> &rarr; {<a href="Renju.html#.attemptedMove">Renju.attemptedMove</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="renju.js.html">renju.js</a>, <a href="renju.js.html#line323">line 323</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Attempts to remove a piece according to the rules of Renju.
+If the removal is valid, it is made and the outcome is returned.
+If the removal is invalid, the outcome is returned.
+The removal of a piece is only allowed in the fifth move of the game.
+This is when black plays two stones in a row and white chooses which to
+remove, as per the rules of Renju.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>row</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The row of the piece to remove.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>column</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The column of the piece to remove.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>gameState</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Renju.html#.gameState">Renju.gameState</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The game state to remove the piece from.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The outcome of the attempt.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Renju.html#.attemptedMove">Renju.attemptedMove</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".checkDraw"><span class="type-signature">(static) </span>checkDraw<span class="signature">(gameState)</span><span class="type-signature"> &rarr; {<a href="Renju.html#.checkedEndingConditions">Renju.checkedEndingConditions</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="renju.js.html">renju.js</a>, <a href="renju.js.html#line282">line 282</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Checks if the game is a draw. It does so by checking if the board is full
+or if the last two moves were passes.
+This is done in accordance with the rules of Renju.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>gameState</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Renju.html#.gameState">Renju.gameState</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The game state to check.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The outcome of the check.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Renju.html#.checkedEndingConditions">Renju.checkedEndingConditions</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".checkWin"><span class="type-signature">(static) </span>checkWin<span class="signature">(playerColour, gameState)</span><span class="type-signature"> &rarr; {<a href="Renju.html#.checkedEndingConditions">Renju.checkedEndingConditions</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="renju.js.html">renju.js</a>, <a href="renju.js.html#line188">line 188</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Checks if the game is winning for a given player. It does so by checking
+if there are any winning moves made by the player or any illegal moves
+made by the opponent. This is done in accordance with the rules of Renju.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>playerColour</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Renju.html#.playerColour">Renju.playerColour</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The colour of the player to check.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>gameState</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Renju.html#.gameState">Renju.gameState</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The game state to check.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The outcome of the check.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Renju.html#.checkedEndingConditions">Renju.checkedEndingConditions</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".colourToMove"><span class="type-signature">(static) </span>colourToMove<span class="signature">(gameState)</span><span class="type-signature"> &rarr; {<a href="Renju.html#.playerColour">Renju.playerColour</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="renju.js.html">renju.js</a>, <a href="renju.js.html#line164">line 164</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Returns the colour of the player who should make the next move.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>gameState</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Renju.html#.gameState">Renju.gameState</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The game state to use.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The colour of the player for the next move.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Renju.html#.playerColour">Renju.playerColour</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".formattedMoves"><span class="type-signature">(static) </span>formattedMoves<span class="signature">(gameState)</span><span class="type-signature"> &rarr; {Array.&lt;string>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="renju.js.html">renju.js</a>, <a href="renju.js.html#line409">line 409</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Get the moves made as an array of strings in the format
+&quot;moveNumber: [playerColour played at row, column]&quot;.
+This is useful for displaying the moves made in a game.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>Renju.getFormattedMoves(gameState);// => [//   " 1: [black played at 7, 7]",//   " 2: [white played at 7, 8]",//   " 3: [black played at 8, 7]",//   " 4: [white played at 8, 8]",//   " 5: [black played at 9, 7]"// ]</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>gameState</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Renju.html#.gameState">Renju.gameState</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The game state to get the moves from.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The moves made as an array of strings.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;string></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".initiateGame"><span class="type-signature">(static) </span>initiateGame<span class="signature">(width<span class="signature-attributes">opt</span>, height<span class="signature-attributes">opt</span>, input<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="Renju.html#.gameState">Renju.gameState</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="renju.js.html">renju.js</a>, <a href="renju.js.html#line73">line 73</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Create a new game state with a board and a queue of moves.
+Optionally with a specified width and height and value of each cell,
+otherwise returns a standard 15 wide, 15 high board with values of null.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>width</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>15</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>The width of the new board.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>height</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>15</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>The height of the new board.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>input</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>null</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>The initial value of each cell.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The state of a game for starting a game.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Renju.html#.gameState">Renju.gameState</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isMoveValid"><span class="type-signature">(static) </span>isMoveValid<span class="signature">(playerColour, row, column, gameState)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="renju.js.html">renju.js</a>, <a href="renju.js.html#line117">line 117</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Check if a given move is valid according to the rules of Renju.
+This function is to stop the user from making invalid moves
+in the opening and to prevent the wrong colour from moving.
+It will evaluate to true if making illegal moves such as
+double threes, double fours or overlines. These can be made
+but the opponent can claim victory if they are made.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>playerColour</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Renju.html#.playerColour">Renju.playerColour</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The colour to check.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>row</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The row of the move.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>column</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The column of the move.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>gameState</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Renju.html#.gameState">Renju.gameState</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The game state to use.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Whether the move is valid as described above.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".movesMade"><span class="type-signature">(static) </span>movesMade<span class="signature">(gameState)</span><span class="type-signature"> &rarr; {number}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="renju.js.html">renju.js</a>, <a href="renju.js.html#line87">line 87</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Get the number of moves already made from the full game state.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>gameState</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Renju.html#.gameState">Renju.gameState</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The game state to use.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The number of moves made.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".nextMoveNumber"><span class="type-signature">(static) </span>nextMoveNumber<span class="signature">(gameState)</span><span class="type-signature"> &rarr; {number}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="renju.js.html">renju.js</a>, <a href="renju.js.html#line98">line 98</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Get the next move number.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>gameState</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Renju.html#.gameState">Renju.gameState</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The game state to use.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The next move number.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Type Definitions</h3>
+
+        
+                
+<h4 class="name" id=".attemptedMove">attemptedMove</h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="renju.js.html">renju.js</a>, <a href="renju.js.html#line34">line 34</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>gameState</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Renju.html#.gameState">Renju.gameState</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The new gameState if move was valid.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>valid</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Whether the attempt to move was valid.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>The result of an attempt to make a move.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id=".checkedEndingConditions">checkedEndingConditions</h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="renju.js.html">renju.js</a>, <a href="renju.js.html#line42">line 42</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>valid</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Whether the game has ended.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>reason</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The reason for the win or draw.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>The result of a check of ending conditions (win or draw).
+It is valid if the game has ended and provides the reason for the end.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id=".gameState">gameState</h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="renju.js.html">renju.js</a>, <a href="renju.js.html#line14">line 14</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>board</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Array.&lt;<a href="Renju.html#.playerColour">Renju.playerColour</a>>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The board of the game.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>moves</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;<a href="Renju.html#.move">Renju.move</a>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The moves made in the game.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>A Board is a grid that stones can be placed into one at a time.
+It is represented as a two dimensional array of values.
+The dimensions of the board must be odd.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id=".move">move</h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="renju.js.html">renju.js</a>, <a href="renju.js.html#line51">line 51</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>playerColour</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Renju.html#.playerColour">Renju.playerColour</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The colour which moved.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>row</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The row of the move. -1 means pass.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>column</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The column of the move. -1 means pass.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>removed</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Whether the move was a removal.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>A queue of moves made in the game.
+Keeps track of the moves made and the number of moves made.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id=".playerColour">playerColour</h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="renju.js.html">renju.js</a>, <a href="renju.js.html#line24">line 24</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>"black"</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A black stone.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>"white"</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A white stone.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>"removed"</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A removed stone.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>null</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">null</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An empty cell.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <p>The four values that can be in a cell of a board.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.2</a> on Fri Jun 23 2023 15:23:42 GMT+0100 (British Summer Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

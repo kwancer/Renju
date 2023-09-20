@@ -1,0 +1,326 @@
+:root
+{
+    --header-height: 50px;
+    --aside-width: 15%;
+    --corner-radius: 20px;
+}
+
+/* General */
+
+body
+{
+    font-family: Helvetica;
+    margin: 0;
+    background: rgba(255, 96, 96, 1);
+}
+
+button
+{
+    border: 1px solid black;
+    border-radius: 5px;
+    font-weight: bolder;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+h1, h2, h3 {
+    margin: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+input {
+    width: 30%;
+    height: 30px;
+    background-color: wheat;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+select {
+    width: 30%;
+    height: 30px;
+    background-color: wheat;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+button {
+    width: 30%;
+    height: 30px;
+    background-color: wheat;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Aside */
+
+aside 
+{
+    height: calc(100% - var(--header-height));
+    position: absolute;
+    top: var(--header-height);
+    width: var(--aside-width);
+    transition: all 2s linear;
+}
+
+#left
+{
+    left: 0;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    border-top-right-radius: var(--corner-radius);
+    border-bottom-right-radius: var(--corner-radius);
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#right
+{
+    right: 0;
+    background: rgba(255, 255, 255, 1);
+    color: rgba(0, 0, 0, 1);
+    border-top-left-radius: var(--corner-radius);
+    border-bottom-left-radius: var(--corner-radius);
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#clock_black {
+    margin: 5%;
+    padding: 5%;
+    width: 80%;
+    height: 40%;
+    background-color: rgba(255, 96, 96, 0.95);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: var(--corner-radius);
+}
+
+#clock_white {
+    margin: 5%;
+    padding: 5%;
+    width: 80%;
+    height: 40%;
+    background-color: rgba(255, 96, 96, 0.9);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: var(--corner-radius);
+}
+
+#clock_container_right {
+    display: none;
+}
+
+#clock_container_left {
+    display: none;
+}
+
+aside button {
+    width:95%;
+    height:30px;
+    margin: 5px;
+    background-color: wheat;
+    border-radius: var(--corner-radius);
+    border: none;
+    text-align: center;
+}
+
+#text-aside
+{
+    margin: 10px;
+}
+
+/* Header */
+
+header
+{
+    background: rgba(255, 96, 96,1);
+    height: var(--header-height);
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+header ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+header li {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 0px;
+}
+header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header h1 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: rgb(0, 0, 0);
+}
+
+/* Main */
+
+main
+{
+    position: absolute;
+    top: var(--header-height);
+    left: var(--aside-width);
+    width: calc(100% - var(--aside-width)*2);
+    height: calc(100% - var(--header-height));
+    border-radius: var(--corner-radius);
+    background-image: url("./assets/woodenEffect.jpg")
+}
+
+.game_board_container
+{
+    aspect-ratio: var(--game-columns) / var(--game-rows);
+    max-width: 94%;
+    max-height: 94%;
+    margin: auto;
+    transition: all 2s linear;
+    padding: 2%;
+    display:none;
+}
+
+.game_info_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#end_game_container {
+    display: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: var(--corner-radius);
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10%;
+    margin: 10%;
+}
+
+/* Game */
+
+#game_board
+{
+    width: 100%;
+    height: 100%;
+    table-layout: fixed;
+    border-radius: var(--corner-radius);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.active_cell
+{
+    background-color: rgb(152, 63, 63);
+    transition: .2s all;
+}
+
+.inactive_cell
+{
+    background-color: wheat;
+}
+
+table, tr, td {
+    border: none;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+
+/* Game Info, Setup and End*/
+
+#game_info {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: var(--corner-radius);
+    padding: 10px;
+}
+
+.game_info_container #text {
+    text-align: center;
+}
+
+#game_setup {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: var(--corner-radius);
+    padding: 10px;
+}
+
+#start_button {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: var(--corner-radius);
+    padding: 10px;
+}
+
+#end_game_container button {
+    width: 50%;
+    height: 30px;
+    background-color: wheat;
+    border-radius: var(--corner-radius);
+    border: none;
+    text-align: center;
+}
+
+/* Popups */
+
+#popup {
+    font-weight: bold;
+    position: absolute;
+    top: 0.5%;
+    left: 0.5%;
+    width: 99%;
+    height: 20%;
+    background-color: rgba(255, 96, 96, 0.95);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: var(--corner-radius);
+    z-index: 1;
+}
+
+#message_popup {
+    font-weight: bold;
+    position: absolute;
+    top: 0.5%;
+    left: 20%;
+    width: 60%;
+    height: 10%;
+    background-color: rgba(255, 96, 96, 0.95);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: var(--corner-radius);
+    z-index: 1;
+
+}
